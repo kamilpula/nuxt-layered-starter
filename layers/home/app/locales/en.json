@@ -1,0 +1,12 @@
+{
+  "authLayer": {
+    "page": {
+      "login": {
+        "title": "Login"
+      },
+      "register": {
+        "title": "Register"
+      }
+    }
+  }
+}
