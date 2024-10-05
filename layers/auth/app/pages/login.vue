@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  title: 'authLayer.page.login.title',
+})
 const { $vp } = useNuxtApp()
 </script>
 

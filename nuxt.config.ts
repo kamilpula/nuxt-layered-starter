@@ -46,6 +46,11 @@ export default defineNuxtConfig({
     },
   },
 
+  // SEO
+  site: {
+    name: 'Global Reset',
+  },
+
   // Module config
   pinia: {
     storesDirs: ['./app/stores/**'],
@@ -74,6 +79,10 @@ export default defineNuxtConfig({
     },
     vueI18n: './i18n.config.ts',
     baseUrl: process.env.NUXT_I18N_BASE_URL,
+  },
+
+  colorMode: {
+    classSuffix: '',
   },
 
   // Build
