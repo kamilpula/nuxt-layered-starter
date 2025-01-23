@@ -1,15 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import process from 'node:process'
+import { fileURLToPath } from 'node:url'
 import { useLayers } from 'nuxt-layers-utils'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const layers = useLayers(__dirname, {
   ui: 'layers/ui',
-  auth: 'layers/auth',
   home: 'layers/home',
+  auth: 'layers/auth',
 })
 
 export default defineNuxtConfig({
@@ -24,6 +24,8 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/seo',
     '@nuxtjs/color-mode',
+    'nuxt-auth-utils',
+    '@nuxtjs/tailwindcss',
   ],
 
   extends: layers.extends(),
@@ -38,7 +40,18 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    session: {
+      name: 'nuxt-layered-starter',
+      password: '54e84988926c30232a87b144fc5d481520b27527e64612358bb3fc68672ff6de',
+      maxAge: 60 * 60 * 24 * 30, // 1 month
+    },
+
     public: {
+      source: {
+        livePreview: {
+          updateSecret: process.env.SOURCE_LIVE_PREVIEW_UPDATE_SECRET,
+        },
+      },
       nodeEnv: process.env.NODE_ENV,
       baseUrl: process.env.APP_BASE_URL,
       apiBaseClientUrl: process.env.API_BASE_CLIENT_URL,
@@ -48,7 +61,7 @@ export default defineNuxtConfig({
 
   // SEO
   site: {
-    name: 'Global Reset',
+    name: 'nuxt-layered-starter',
   },
 
   // Module config
@@ -81,14 +94,37 @@ export default defineNuxtConfig({
     baseUrl: process.env.NUXT_I18N_BASE_URL,
   },
 
-  colorMode: {
-    classSuffix: '',
+  veeValidate: {
+    autoImports: true,
+    componentNames: {
+      Form: 'CNForm',
+      Field: 'CNFormField',
+      FieldArray: 'CNFormFieldArray',
+    },
   },
 
   // Build
+  nitro: {
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true,
+    },
+    minify: true,
+    experimental: {
+      websocket: true,
+    },
+  },
+
+  vite: {
+    optimizeDeps: {
+      exclude: ['vee-validate'],
+    },
+  },
+
   typescript: {
     strict: true,
     typeCheck: true,
+    shim: false,
   },
 
   compatibilityDate: '2024-10-02',
@@ -105,7 +141,7 @@ export default defineNuxtConfig({
   telemetry: false,
 
   devServer: {
-    port: 3001,
+    port: 3000,
   },
 
   devtools: {

@@ -1,0 +1,21 @@
+{
+  "authLayer": {
+    "login": {
+      "title": "Sign in",
+      "toast": {
+        "success": "You have successfully logged in."
+      }
+    },
+    "logout": {
+      "title": "Logout",
+      "toast": {
+        "success": "You have successfully logged out."
+      }
+    },
+    "page": {
+      "login": {
+        "title": "Login"
+      }
+    }
+  }
+}

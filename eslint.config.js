@@ -1,7 +1,7 @@
 // https://github.com/antfu/eslint-config
 import antfu from '@antfu/eslint-config'
-import twEslint from 'eslint-plugin-tailwindcss'
 import quibble from 'eslint-plugin-quibble'
+import twEslint from 'eslint-plugin-tailwindcss'
 
 export default antfu({
   plugins: {
@@ -23,10 +23,11 @@ export default antfu({
     'capitalized-comments': 'error',
     'jsonc/sort-keys': 'error',
     '@typescript-eslint/prefer-ts-expect-error': 'off',
-    'quibble/no-excessive-whitespace': 'error',
+    'quibble/no-excessive-whitespace': ['error', { callees: ['clsx', 'ctl', 'cva', 'cx', 'cn'] }],
     'vue/v-bind-style': ['error', 'shorthand', {
       sameNameShorthand: 'always',
     }],
+    'unicorn/consistent-function-scoping': 'off',
     'vue/padding-line-between-tags': ['error', [
       { blankLine: 'always', prev: '*', next: '*' },
     ]],
@@ -39,7 +40,7 @@ export default antfu({
   },
   settings: {
     tailwindcss: {
-      callees: ['classnames', 'clsx', 'ctl', 'classMerge', 'cva', 'cx'],
+      callees: ['classnames', 'clsx', 'ctl', 'cva', 'cx', 'cn'],
     },
   },
 })

@@ -1,4 +1,4 @@
-import en from './app/locales/en.json'
+import en from './i18n/en.json'
 
 export default defineI18nConfig(() => ({
   legacy: false,
@@ -20,6 +20,23 @@ export default defineI18nConfig(() => ({
       percent: {
         style: 'percent',
         useGrouping: false,
+      },
+    },
+  },
+  datetimeFormats: {
+    en: {
+      short: {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      },
+      long: {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        weekday: 'short',
+        hour: 'numeric',
+        minute: 'numeric',
       },
     },
   },

@@ -1,0 +1,17 @@
+{
+  "appConfig": {
+    "name": "nuxt-layered-starter"
+  },
+  "layout": {
+    "default": {
+      "header": {
+        "navigationMenu": {
+          "logout": {
+            "label": "Logout",
+            "success": "You've been logged out successfully."
+          }
+        }
+      }
+    }
+  }
+}

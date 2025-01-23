@@ -1,0 +1,18 @@
+<script setup lang="ts">
+import { SelectGroup, type SelectGroupProps } from 'radix-vue'
+import { computed, type HTMLAttributes } from 'vue'
+
+const props = defineProps<SelectGroupProps & { class?: HTMLAttributes['class'] }>()
+
+const delegatedProps = computed(() => {
+  const { class: _, ...delegated } = props
+
+  return delegated
+})
+</script>
+
+<template>
+  <SelectGroup :class="cn('flex w-full flex-col gap-1 p-1', props.class)" v-bind="delegatedProps">
+    <slot />
+  </SelectGroup>
+</template>

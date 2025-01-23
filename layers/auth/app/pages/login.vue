@@ -1,16 +1,17 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'authLayer.page.login.title',
+  name: 'login',
+  middleware: 'unauth',
 })
-const { $vp } = useNuxtApp()
+
+const { t } = useI18n()
+
+useHead({
+  title: t('authLayer.page.login.title'),
+},
+)
 </script>
 
 <template>
-  <div>
-    <h1>{{ $t('authLayer.page.login.title') }}</h1>
-
-    {{ $vp.isDesktop }}
-    {{ $vp.isTablet }}
-    {{ $vp.isMobile }}
-  </div>
+  <AuthLoginContainer />
 </template>

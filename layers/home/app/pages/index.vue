@@ -1,9 +1,17 @@
 <script setup lang="ts">
+definePageMeta({
+  name: 'home',
+})
 
+const { t } = useI18n()
+
+useHead({
+  title: t('homeLayer.page.home.title'),
+})
 </script>
 
 <template>
-  <div>
-    Hello, world!
+  <div class="flex w-full justify-center">
+    home
   </div>
 </template>

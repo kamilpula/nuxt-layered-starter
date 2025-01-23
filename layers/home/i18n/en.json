@@ -1,0 +1,12 @@
+{
+  "homeLayer": {
+    "home": {
+      "title": "Home page"
+    },
+    "page": {
+      "home": {
+        "title": "Home"
+      }
+    }
+  }
+}
