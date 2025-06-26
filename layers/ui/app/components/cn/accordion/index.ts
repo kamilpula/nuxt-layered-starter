@@ -1,4 +1,4 @@
-export { default as CNAccordion } from './CNAccordion.vue'
-export { default as CNAccordionContent } from './CNAccordionContent.vue'
-export { default as CNAccordionItem } from './CNAccordionItem.vue'
-export { default as CNAccordionTrigger } from './CNAccordionTrigger.vue'
+export { default as Accordion } from './Accordion.vue'
+export { default as AccordionContent } from './AccordionContent.vue'
+export { default as AccordionItem } from './AccordionItem.vue'
+export { default as AccordionTrigger } from './AccordionTrigger.vue'

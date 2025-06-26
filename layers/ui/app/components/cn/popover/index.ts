@@ -1,4 +1,4 @@
-export { default as CNPopover } from './CNPopover.vue'
-export { default as CNPopoverContent } from './CNPopoverContent.vue'
-export { default as CNPopoverTrigger } from './CNPopoverTrigger.vue'
-export { PopoverAnchor as CNPopoverAnchor } from 'radix-vue'
+export { default as Popover } from './Popover.vue'
+export { default as PopoverAnchor } from './PopoverAnchor.vue'
+export { default as PopoverContent } from './PopoverContent.vue'
+export { default as PopoverTrigger } from './PopoverTrigger.vue'

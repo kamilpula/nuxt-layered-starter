@@ -1,13 +1,13 @@
 import fs from 'node:fs'
-import { createResolver } from '@nuxt/kit'
+import { createResolver } from 'nuxt/kit'
 import { SupportedLocale } from '../../../types/enums'
 
 export default function localeResolver(basePath: string) {
-  const LOCALES_DIR = 'i18n'
+  const LOCALES_DIR = 'i18n/translations'
+
+  const { resolve } = createResolver(basePath)
 
   function assertAllSupportedLocaleExist() {
-    const { resolve } = createResolver(basePath)
-
     const resolvedDir = resolve(LOCALES_DIR)
 
     if (!fs.existsSync(resolvedDir)) {
@@ -32,7 +32,7 @@ export default function localeResolver(basePath: string) {
 
     return {
       lazy: true,
-      langDir: '',
+      langDir: 'translations/',
       locales,
     }
   }

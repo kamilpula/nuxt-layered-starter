@@ -1,1 +1,1 @@
-export { default as CNCheckbox } from './CNCheckbox.vue'
+export { default as Checkbox } from './Checkbox.vue'

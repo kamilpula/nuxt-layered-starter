@@ -1,11 +1,9 @@
 // https://github.com/antfu/eslint-config
 import antfu from '@antfu/eslint-config'
 import quibble from 'eslint-plugin-quibble'
-import twEslint from 'eslint-plugin-tailwindcss'
 
 export default antfu({
   plugins: {
-    twEslint,
     quibble,
   },
   typescript: true,
@@ -16,14 +14,21 @@ export default antfu({
     jsonc: true,
   },
   rules: {
-    'twEslint/classnames-order': 'error',
-    'twEslint/enforces-shorthand': 'error',
-    'twEslint/no-contradicting-classname': 'error',
-    'twEslint/no-unnecessary-arbitrary-value': 'error',
+    'vue/max-attributes-per-line': ['error', {
+      singleline: {
+        max: 1,
+      },
+      multiline: {
+        max: 1,
+      },
+    }],
+    'vue/first-attribute-linebreak': ['error', {
+      singleline: 'ignore',
+      multiline: 'below',
+    }],
     'capitalized-comments': 'error',
     'jsonc/sort-keys': 'error',
-    '@typescript-eslint/prefer-ts-expect-error': 'off',
-    'quibble/no-excessive-whitespace': ['error', { callees: ['clsx', 'ctl', 'cva', 'cx', 'cn'] }],
+    'quibble/no-excessive-whitespace': ['error', { callees: ['classnames', 'clsx', 'ctl', 'cva', 'cx', 'cn'] }],
     'vue/v-bind-style': ['error', 'shorthand', {
       sameNameShorthand: 'always',
     }],

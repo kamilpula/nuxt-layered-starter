@@ -58,16 +58,12 @@
   "i18n-ally.keepFulfilled": true,
   "i18n-ally.keystyle": "nested",
   "i18n-ally.localesPaths": [
-    "**/i18n",
+    "**/i18n/translations/**",
     "!**/node_modules/**"
   ],
   "i18n-ally.pathMatcher": "{locale}.json",
   "i18n-ally.sortKeys": true,
 
-  "prettier.enable": false,
+  "prettier.enable": false
 
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
 }
