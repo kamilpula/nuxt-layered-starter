@@ -1,1 +1,1 @@
-export { default as CNInput } from './CNInput.vue'
+export { default as Input } from './Input.vue'

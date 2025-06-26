@@ -1,9 +1,10 @@
 <template>
-  <CNToastToaster />
-
   <NuxtRouteAnnouncer />
 
-  <NuxtLoadingIndicator class="bg-gradient-to-r from-blue-500 to-blue-800" :color="false" />
+  <NuxtLoadingIndicator
+    class="bg-gradient-to-r from-blue-500 to-blue-800"
+    :color="false"
+  />
 
   <NuxtLayout>
     <NuxtPage />

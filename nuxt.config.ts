@@ -2,6 +2,7 @@
 import { dirname, join } from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
+import tailwindcss from '@tailwindcss/vite'
 import { useLayers } from 'nuxt-layers-utils'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -9,7 +10,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const layers = useLayers(__dirname, {
   ui: 'layers/ui',
   home: 'layers/home',
-  auth: 'layers/auth',
 })
 
 export default defineNuxtConfig({
@@ -18,14 +18,12 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@vee-validate/nuxt',
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/seo',
     '@nuxtjs/color-mode',
     'nuxt-auth-utils',
-    '@nuxtjs/tailwindcss',
   ],
 
   extends: layers.extends(),
@@ -47,15 +45,6 @@ export default defineNuxtConfig({
     },
 
     public: {
-      source: {
-        livePreview: {
-          updateSecret: process.env.SOURCE_LIVE_PREVIEW_UPDATE_SECRET,
-        },
-      },
-      nodeEnv: process.env.NODE_ENV,
-      baseUrl: process.env.APP_BASE_URL,
-      apiBaseClientUrl: process.env.API_BASE_CLIENT_URL,
-      apiBaseServerUrl: process.env.API_BASE_SERVER_URL,
     },
   },
 
@@ -94,16 +83,9 @@ export default defineNuxtConfig({
     baseUrl: process.env.NUXT_I18N_BASE_URL,
   },
 
-  veeValidate: {
-    autoImports: true,
-    componentNames: {
-      Form: 'CNForm',
-      Field: 'CNFormField',
-      FieldArray: 'CNFormFieldArray',
-    },
-  },
-
   // Build
+  css: ['~/assets/css/tailwind.css'],
+
   nitro: {
     compressPublicAssets: {
       gzip: true,
@@ -119,15 +101,15 @@ export default defineNuxtConfig({
     optimizeDeps: {
       exclude: ['vee-validate'],
     },
+    plugins: [
+      tailwindcss(),
+    ],
   },
 
   typescript: {
     strict: true,
     typeCheck: true,
-    shim: false,
   },
-
-  compatibilityDate: '2024-10-02',
 
   future: {
     compatibilityVersion: 4,
@@ -142,12 +124,5 @@ export default defineNuxtConfig({
 
   devServer: {
     port: 3000,
-  },
-
-  devtools: {
-    enabled: true,
-    timeline: {
-      enabled: true,
-    },
   },
 })

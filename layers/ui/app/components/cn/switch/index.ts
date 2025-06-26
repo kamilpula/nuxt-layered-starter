@@ -1,1 +1,1 @@
-export { default as Switch } from './CNSwitch.vue'
+export { default as Switch } from './Switch.vue'

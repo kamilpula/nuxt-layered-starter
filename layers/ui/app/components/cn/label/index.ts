@@ -1,1 +1,1 @@
-export { default as CNLabel } from './CNLabel.vue'
+export { default as Label } from './Label.vue'
