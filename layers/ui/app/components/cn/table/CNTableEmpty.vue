@@ -2,8 +2,8 @@
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 
-import TableCell from './TableCell.vue'
-import TableRow from './TableRow.vue'
+import TableCell from './CNTableCell.vue'
+import TableRow from './CNTableRow.vue'
 
 const props = withDefaults(defineProps<{
   class?: HTMLAttributes['class']

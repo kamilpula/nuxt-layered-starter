@@ -1,8 +1,8 @@
-export { default as Carousel } from './Carousel.vue'
-export { default as CarouselContent } from './CarouselContent.vue'
-export { default as CarouselItem } from './CarouselItem.vue'
-export { default as CarouselNext } from './CarouselNext.vue'
-export { default as CarouselPrevious } from './CarouselPrevious.vue'
+export { default as Carousel } from './CNCarousel.vue'
+export { default as CarouselContent } from './CNCarouselContent.vue'
+export { default as CarouselItem } from './CNCarouselItem.vue'
+export { default as CarouselNext } from './CNCarouselNext.vue'
+export { default as CarouselPrevious } from './CNCarouselPrevious.vue'
 export type {
   UnwrapRefCarouselApi as CarouselApi,
 } from './interface'

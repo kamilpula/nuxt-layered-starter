@@ -1,8 +1,7 @@
 <script setup lang="ts">
+import type { ButtonVariants } from '#ui/app/components/cn/button'
+
 import type { WithClassAsProps } from './interface'
-
-
-import { type ButtonVariants } from '#ui/app/components/cn/button'
 import { useCarousel } from './useCarousel'
 
 const props = withDefaults(defineProps<{
@@ -28,12 +27,13 @@ const { orientation, canScrollPrev, scrollPrev } = useCarousel()
         : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
       props.class,
     )"
-    :variant="variant"
-    :size="size"
+    :variant
+    :size
     @click="scrollPrev"
   >
     <slot>
       <Icon name="uil:angle-left" />
+
       <span class="sr-only">Previous Slide</span>
     </slot>
   </Button>

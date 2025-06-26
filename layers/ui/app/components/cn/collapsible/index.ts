@@ -1,3 +1,3 @@
-export { default as Collapsible } from './Collapsible.vue'
-export { default as CollapsibleContent } from './CollapsibleContent.vue'
-export { default as CollapsibleTrigger } from './CollapsibleTrigger.vue'
+export { default as Collapsible } from './CNCollapsible.vue'
+export { default as CollapsibleContent } from './CNCollapsibleContent.vue'
+export { default as CollapsibleTrigger } from './CNCollapsibleTrigger.vue'

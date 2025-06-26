@@ -2,9 +2,6 @@
 import type { SidebarProps } from '.'
 
 import { Sheet, SheetContent } from '#ui/app/components/cn/sheet'
-import SheetDescription from '#ui/app/components/cn/sheet/SheetDescription.vue'
-import SheetHeader from '#ui/app/components/cn/sheet/SheetHeader.vue'
-import SheetTitle from '#ui/app/components/cn/sheet/SheetTitle.vue'
 import { SIDEBAR_WIDTH_MOBILE, useSidebar } from './utils'
 
 defineOptions({
@@ -30,12 +27,17 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
     <slot />
   </div>
 
-  <Sheet v-else-if="isMobile" :open="openMobile" v-bind="$attrs" @update:open="setOpenMobile">
+  <Sheet
+    v-else-if="isMobile"
+    :open="openMobile"
+    v-bind="$attrs"
+    @update:open="setOpenMobile"
+  >
     <SheetContent
       data-sidebar="sidebar"
       data-slot="sidebar"
       data-mobile="true"
-      :side="side"
+      :side
       class="bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
       :style="{
         '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
@@ -43,8 +45,10 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
     >
       <SheetHeader class="sr-only">
         <SheetTitle>Sidebar</SheetTitle>
+
         <SheetDescription>Displays the mobile sidebar.</SheetDescription>
       </SheetHeader>
+
       <div class="flex h-full w-full flex-col">
         <slot />
       </div>
@@ -71,6 +75,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
           : 'group-data-[collapsible=icon]:w-(--sidebar-width-icon)',
       )"
     />
+
     <div
       :class="cn(
         'fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex',

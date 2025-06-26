@@ -2,7 +2,7 @@
 import type { DialogRootEmits, DialogRootProps } from 'reka-ui'
 import { useForwardPropsEmits } from 'reka-ui'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '#ui/app/components/cn/dialog'
-import Command from './Command.vue'
+import Command from './CNCommand.vue'
 
 const props = withDefaults(defineProps<DialogRootProps & {
   title?: string
