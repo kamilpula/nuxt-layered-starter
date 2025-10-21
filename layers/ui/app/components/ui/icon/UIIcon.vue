@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import type { VariantProps } from 'class-variance-authority'
 import type { HTMLAttributes } from 'vue'
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
 
 interface UIIconVariantProps extends VariantProps<typeof uiIconVariants> {}
 
@@ -17,14 +18,16 @@ const props = defineProps<UIIconProps>()
 const uiIconVariants = cva('', {
   variants: {
     size: {
-      'sm': 'min-h-3.5 min-w-3.5',
-      'md': 'min-h-4 min-w-4',
-      'lg': 'min-h-[1.125rem] min-w-[1.125rem]',
-      'xl': 'min-h-5 min-w-5',
-      '2xl': 'min-h-6 min-w-6',
-      '3xl': 'min-h-7 min-w-7',
-      '4xl': 'min-h-8 min-w-8',
-      'flag': 'min-h-2 min-w-4',
+      'xs': 'size-3!',
+      'sm': 'size-3.5!',
+      'md': 'size-4!',
+      'lg': 'size-4.5!',
+      'xl': 'size-5!',
+      '2xl': 'size-6!',
+      '3xl': 'size-7!',
+      '4xl': 'size-8!',
+      'flag': 'w-4 h-2!',
+      'custom': '',
     },
 
     hoverable: {
@@ -48,7 +51,11 @@ const iconMode = computed(() => {
 </script>
 
 <template>
-  <div :class="cn('inline-flex items-center rounded-full p-1', uiIconVariants({ hoverable }), props.class)">
-    <Icon :name :class="cn(uiIconVariants({ size }), props.iconClass)" :mode="iconMode" />
+  <div :class="cn('inline-flex items-center justify-center rounded-full p-1 shrink-0', uiIconVariants({ hoverable, size }), props.class)">
+    <Icon
+      :name
+      :class="cn('shrink-0', uiIconVariants({ size }), props.iconClass)"
+      :mode="iconMode"
+    />
   </div>
 </template>

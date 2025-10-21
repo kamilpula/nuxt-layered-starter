@@ -6,7 +6,7 @@ definePageMeta({
 const { t } = useI18n()
 
 useHead({
-  title: t('homeLayer.page.home.title'),
+  title: t('homeLayer.page.home.meta.title'),
 })
 </script>
 

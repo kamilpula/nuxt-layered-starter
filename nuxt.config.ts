@@ -40,7 +40,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     session: {
       name: 'nuxt-layered-starter',
-      password: '54e84988926c30232a87b144fc5d481520b27527e64612358bb3fc68672ff6de',
+      password: '12e84988926c30232a87b144fc5d481520b24567e64612358bb3fc68672ff6de',
       maxAge: 60 * 60 * 24 * 30, // 1 month
     },
 
@@ -109,10 +109,6 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
     typeCheck: true,
-  },
-
-  future: {
-    compatibilityVersion: 4,
   },
 
   vue: {

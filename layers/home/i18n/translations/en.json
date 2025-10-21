@@ -5,7 +5,10 @@
     },
     "page": {
       "home": {
-        "title": "Home"
+        "meta": {
+
+          "title": "Home"
+        }
       }
     }
   }

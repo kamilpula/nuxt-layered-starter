@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   // Main config
   modules: [
     'nuxt-viewport',
+    '@nuxt/fonts',
   ],
 
   imports: {
@@ -17,6 +18,7 @@ export default defineNuxtConfig({
   components: [
     { path: '#ui/app/components/cn', prefix: 'cn', pattern: '**/*.vue' },
     { path: '#ui/app/components/ui', prefix: 'ui', pattern: '**/*.vue' },
+    { path: '#ui/app/components/in', prefix: 'in', pattern: '**/*.vue' },
   ],
 
   // Module
@@ -31,25 +33,21 @@ export default defineNuxtConfig({
   },
 
   colorMode: {
+    preference: 'dark', // Default value of $colorMode.preference
+    fallback: 'dark', // Fallback value if not system preference found
+    classPrefix: '',
     classSuffix: '',
+    storageKey: 'kamilpula-color-mode',
   },
 
-  // Build
-  typescript: {
-    strict: true,
-    typeCheck: true,
+  fonts: {
+    defaults: {
+      weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    },
   },
 
   compatibilityDate: '2024-04-03',
 
-  future: {
-    compatibilityVersion: 4,
-  },
-
   // Dev
   telemetry: false,
-
-  devServer: {
-    port: 4001,
-  },
 })
