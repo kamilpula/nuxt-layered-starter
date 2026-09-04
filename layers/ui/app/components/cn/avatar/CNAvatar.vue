@@ -2,7 +2,6 @@
 import type { HTMLAttributes } from 'vue'
 import { AvatarRoot } from 'reka-ui'
 
-
 const props = defineProps<{
   class?: HTMLAttributes['class']
 }>()

@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { MenubarRadioGroupEmits, MenubarRadioGroupProps } from 'reka-ui'
 import {
   MenubarRadioGroup,
-  type MenubarRadioGroupEmits,
-  type MenubarRadioGroupProps,
+
   useForwardPropsEmits,
 } from 'reka-ui'
 

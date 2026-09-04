@@ -1,14 +1,13 @@
 <script setup lang="ts">
+import type { MenubarRadioItemEmits, MenubarRadioItemProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import {
   MenubarItemIndicator,
   MenubarRadioItem,
-  type MenubarRadioItemEmits,
-  type MenubarRadioItemProps,
+
   useForwardPropsEmits,
 } from 'reka-ui'
-
 
 const props = defineProps<MenubarRadioItemProps & { class?: HTMLAttributes['class'] }>()
 const emits = defineEmits<MenubarRadioItemEmits>()
@@ -29,9 +28,13 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
   >
     <span class="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
       <MenubarItemIndicator>
-        <Icon name="uil:circle" class="size-2 fill-current" />
+        <Icon
+          name="uil:circle"
+          class="size-2 fill-current"
+        />
       </MenubarItemIndicator>
     </span>
+
     <slot />
   </MenubarRadioItem>
 </template>

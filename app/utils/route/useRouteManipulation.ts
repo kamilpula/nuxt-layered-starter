@@ -1,5 +1,5 @@
-import type { LocationQueryRaw } from '#vue-router'
 import type { PaginatePageQuery } from '~~/types/app/paginate/paginate'
+import type { LocationQueryRaw } from '#vue-router'
 
 export function useRouteManipulation() {
   const router = useRouter()

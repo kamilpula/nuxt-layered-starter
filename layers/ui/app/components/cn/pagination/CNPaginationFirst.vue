@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { PaginationFirstProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
+import type { ButtonVariants } from '#ui/app/components/cn/button'
 import { reactiveOmit } from '@vueuse/core'
-import { PaginationFirst, useForwardProps } from 'reka-ui'
 
-import { buttonVariants, type ButtonVariants } from '#ui/app/components/cn/button'
+import { PaginationFirst, useForwardProps } from 'reka-ui'
+import { buttonVariants } from '#ui/app/components/cn/button'
 
 const props = withDefaults(defineProps<PaginationFirstProps & {
   size?: ButtonVariants['size']
@@ -25,6 +26,7 @@ const forwarded = useForwardProps(delegatedProps)
   >
     <slot>
       <Icon name="uil:angle-left" />
+
       <span class="hidden sm:block">First</span>
     </slot>
   </PaginationFirst>

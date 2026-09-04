@@ -4,7 +4,6 @@ import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import { ComboboxItem, useForwardPropsEmits } from 'reka-ui'
 
-
 const props = defineProps<ComboboxItemProps & { class?: HTMLAttributes['class'] }>()
 const emits = defineEmits<ComboboxItemEmits>()
 

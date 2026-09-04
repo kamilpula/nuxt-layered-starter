@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import type { SelectItemProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import {
   SelectItem,
   SelectItemIndicator,
-  type SelectItemProps,
+
   SelectItemText,
   useForwardProps,
 } from 'reka-ui'
@@ -29,7 +30,10 @@ const forwardedProps = useForwardProps(delegatedProps)
   >
     <span class="absolute right-2 flex size-3.5 items-center justify-center">
       <SelectItemIndicator>
-        <Icon name="uil:check" class="size-4" />
+        <Icon
+          name="uil:check"
+          class="size-4"
+        />
       </SelectItemIndicator>
     </span>
 

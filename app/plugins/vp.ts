@@ -1,5 +1,3 @@
-
-
 export default defineNuxtPlugin({
   name: 'vp',
   setup() {

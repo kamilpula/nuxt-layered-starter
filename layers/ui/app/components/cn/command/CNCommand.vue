@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { ListboxRootEmits, ListboxRootProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import { ListboxRoot, useFilter, useForwardPropsEmits } from 'reka-ui'
-import { type HTMLAttributes, reactive, ref, watch } from 'vue'
+import { reactive, ref, watch } from 'vue'
 
 import { provideCommandContext } from '.'
 
@@ -35,6 +36,7 @@ const filterState = reactive({
 function filterItems() {
   if (!filterState.search) {
     filterState.filtered.count = allItems.value.size
+
     // Do nothing, each item will know to show itself because search is empty
     return
   }
@@ -46,6 +48,7 @@ function filterItems() {
   // Check which items should be included
   for (const [id, value] of allItems.value) {
     const score = contains(value, filterState.search)
+
     filterState.filtered.items.set(id, score ? 1 : 0)
     if (score)
       itemCount++
@@ -62,10 +65,6 @@ function filterItems() {
   }
 
   filterState.filtered.count = itemCount
-}
-
-function handleSelect() {
-  filterState.search = ''
 }
 
 watch(() => filterState.search, () => {

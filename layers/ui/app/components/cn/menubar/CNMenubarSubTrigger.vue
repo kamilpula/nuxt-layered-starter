@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { MenubarSubTriggerProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
-import { MenubarSubTrigger, type MenubarSubTriggerProps, useForwardProps } from 'reka-ui'
-
+import { MenubarSubTrigger, useForwardProps } from 'reka-ui'
 
 const props = defineProps<MenubarSubTriggerProps & { class?: HTMLAttributes['class'], inset?: boolean }>()
 
@@ -21,6 +21,10 @@ const forwardedProps = useForwardProps(delegatedProps)
     )"
   >
     <slot />
-    <Icon name="uil:angle-right" class="ml-auto size-4" />
+
+    <Icon
+      name="uil:angle-right"
+      class="ml-auto size-4"
+    />
   </MenubarSubTrigger>
 </template>

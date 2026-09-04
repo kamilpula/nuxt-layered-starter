@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { SelectScrollDownButtonProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
-import { SelectScrollDownButton, type SelectScrollDownButtonProps, useForwardProps } from 'reka-ui'
-
+import { SelectScrollDownButton, useForwardProps } from 'reka-ui'
 
 const props = defineProps<SelectScrollDownButtonProps & { class?: HTMLAttributes['class'] }>()
 
@@ -18,7 +18,10 @@ const forwardedProps = useForwardProps(delegatedProps)
     :class="cn('flex cursor-default items-center justify-center py-1', props.class)"
   >
     <slot>
-      <Icon name="uil:angle-down" class="size-4" />
+      <Icon
+        name="uil:angle-down"
+        class="size-4"
+      />
     </slot>
   </SelectScrollDownButton>
 </template>

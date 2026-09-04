@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { motion } from 'motion-v'
 
-
 interface Props {
   text: string
   colors?: string[]

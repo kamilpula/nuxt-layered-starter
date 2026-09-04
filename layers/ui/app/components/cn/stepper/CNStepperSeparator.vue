@@ -4,7 +4,6 @@ import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import { StepperSeparator, useForwardProps } from 'reka-ui'
 
-
 const props = defineProps<StepperSeparatorProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = reactiveOmit(props, 'class')

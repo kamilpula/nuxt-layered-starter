@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import type { PrimitiveProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
-import { Primitive, type PrimitiveProps } from 'reka-ui'
+import type { SidebarMenuButtonVariants } from '.'
 
-import { type SidebarMenuButtonVariants, sidebarMenuButtonVariants } from '.'
+import { Primitive } from 'reka-ui'
+import { sidebarMenuButtonVariants } from '.'
 
 export interface SidebarMenuButtonProps extends PrimitiveProps {
   variant?: SidebarMenuButtonVariants['variant']
@@ -25,8 +27,8 @@ const props = withDefaults(defineProps<SidebarMenuButtonProps>(), {
     :data-size="size"
     :data-active="isActive"
     :class="cn(sidebarMenuButtonVariants({ variant, size }), props.class)"
-    :as="as"
-    :as-child="asChild"
+    :as
+    :as-child
     v-bind="$attrs"
   >
     <slot />

@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { MenubarSeparatorProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
-import { MenubarSeparator, type MenubarSeparatorProps, useForwardProps } from 'reka-ui'
-
+import { MenubarSeparator, useForwardProps } from 'reka-ui'
 
 const props = defineProps<MenubarSeparatorProps & { class?: HTMLAttributes['class'] }>()
 

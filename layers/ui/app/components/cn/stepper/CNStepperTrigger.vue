@@ -4,7 +4,6 @@ import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import { StepperTrigger, useForwardProps } from 'reka-ui'
 
-
 const props = defineProps<StepperTriggerProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = reactiveOmit(props, 'class')

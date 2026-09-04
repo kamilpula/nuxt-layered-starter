@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { ListboxGroupProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import { ListboxGroup, ListboxGroupLabel, useId } from 'reka-ui'
-import { computed, type HTMLAttributes, onMounted, onUnmounted } from 'vue'
+import { computed, onMounted, onUnmounted } from 'vue'
 
 import { provideCommandGroupContext, useCommand } from '.'
 
@@ -31,14 +32,18 @@ onUnmounted(() => {
 <template>
   <ListboxGroup
     v-bind="delegatedProps"
-    :id="id"
+    :id
     data-slot="command-group"
     :class="cn('text-foreground overflow-hidden p-1', props.class)"
     :hidden="isRender ? undefined : true"
   >
-    <ListboxGroupLabel v-if="heading" class="px-2 py-1.5 text-xs font-medium text-muted-foreground">
+    <ListboxGroupLabel
+      v-if="heading"
+      class="px-2 py-1.5 text-xs font-medium text-muted-foreground"
+    >
       {{ heading }}
     </ListboxGroupLabel>
+
     <slot />
   </ListboxGroup>
 </template>

@@ -132,10 +132,10 @@ function handleImageLoad() {
     <NuxtLink
       :to="url"
       :class="cn('', props.linkClass)"
+      :target="props.target"
       @mousemove="handleMouseMove"
       @mouseenter="showPreview"
       @mouseleave="hidePreview"
-      :target="props.target"
     >
       <slot />
     </NuxtLink>

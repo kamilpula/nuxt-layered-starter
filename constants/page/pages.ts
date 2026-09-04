@@ -1,4 +1,3 @@
-
 import type { HomePage } from '#home/types/app/pages'
 
 export const PAGES = {

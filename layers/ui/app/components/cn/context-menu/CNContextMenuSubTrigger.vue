@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import type { ContextMenuSubTriggerProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import {
   ContextMenuSubTrigger,
-  type ContextMenuSubTriggerProps,
+
   useForwardProps,
 } from 'reka-ui'
-
 
 const props = defineProps<ContextMenuSubTriggerProps & { class?: HTMLAttributes['class'], inset?: boolean }>()
 
@@ -26,6 +26,10 @@ const forwardedProps = useForwardProps(delegatedProps)
     )"
   >
     <slot />
-    <Icon name="uil:angle-right" class="ml-auto" />
+
+    <Icon
+      name="uil:angle-right"
+      class="ml-auto"
+    />
   </ContextMenuSubTrigger>
 </template>

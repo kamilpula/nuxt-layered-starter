@@ -2,7 +2,6 @@
 import type { HTMLAttributes } from 'vue'
 import { NumberFieldInput } from 'reka-ui'
 
-
 const props = defineProps<{
   class?: HTMLAttributes['class']
 }>()

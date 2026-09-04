@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { SelectTriggerProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
-import { SelectIcon, SelectTrigger, type SelectTriggerProps, useForwardProps } from 'reka-ui'
+import { SelectIcon, SelectTrigger, useForwardProps } from 'reka-ui'
 
 const props = withDefaults(
   defineProps<SelectTriggerProps & { class?: HTMLAttributes['class'], size?: 'sm' | 'default' }>(),
@@ -23,8 +24,12 @@ const forwardedProps = useForwardProps(delegatedProps)
     )"
   >
     <slot />
+
     <SelectIcon as-child>
-      <Icon name="uil:angle-down" class="size-4 opacity-50" />
+      <Icon
+        name="uil:angle-down"
+        class="size-4 opacity-50"
+      />
     </SelectIcon>
   </SelectTrigger>
 </template>

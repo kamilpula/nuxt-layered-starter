@@ -20,6 +20,7 @@ const { toggleSidebar } = useSidebar()
     @click="toggleSidebar"
   >
     <Icon name="uil:align-left" />
+
     <span class="sr-only">Toggle Sidebar</span>
   </CNButton>
 </template>

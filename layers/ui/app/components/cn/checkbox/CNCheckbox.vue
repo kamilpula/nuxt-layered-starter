@@ -4,7 +4,6 @@ import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import { CheckboxIndicator, CheckboxRoot, useForwardPropsEmits } from 'reka-ui'
 
-
 const props = defineProps<CheckboxRootProps & { class?: HTMLAttributes['class'] }>()
 const emits = defineEmits<CheckboxRootEmits>()
 
@@ -26,7 +25,10 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       class="flex items-center justify-center text-current transition-none"
     >
       <slot>
-        <Icon name="uil:check" class="size-3.5" />
+        <Icon
+          name="uil:check"
+          class="size-3.5"
+        />
       </slot>
     </CheckboxIndicator>
   </CheckboxRoot>

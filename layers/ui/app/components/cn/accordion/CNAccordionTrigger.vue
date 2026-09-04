@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import type { AccordionTriggerProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import {
   AccordionHeader,
   AccordionTrigger,
-  type AccordionTriggerProps,
-} from 'reka-ui'
 
+} from 'reka-ui'
 
 const props = defineProps<AccordionTriggerProps & { class?: HTMLAttributes['class'] }>()
 
@@ -26,6 +26,7 @@ const delegatedProps = reactiveOmit(props, 'class')
       "
     >
       <slot />
+
       <slot name="icon">
         <Icon
           name="uil:angle-down"

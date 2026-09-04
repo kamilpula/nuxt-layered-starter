@@ -8,7 +8,6 @@ import {
   useForwardProps,
 } from 'reka-ui'
 
-
 const props = defineProps<RadioGroupItemProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = reactiveOmit(props, 'class')
@@ -31,7 +30,10 @@ const forwardedProps = useForwardProps(delegatedProps)
       data-slot="radio-group-indicator"
       class="relative flex items-center justify-center"
     >
-      <Icon name="uil:circle" class="fill-primary absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2" />
+      <Icon
+        name="uil:circle"
+        class="fill-primary absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2"
+      />
     </RadioGroupIndicator>
   </RadioGroupItem>
 </template>

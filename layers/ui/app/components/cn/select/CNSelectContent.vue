@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import type { SelectContentEmits, SelectContentProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import {
   SelectContent,
-  type SelectContentEmits,
-  type SelectContentProps,
+
   SelectPortal,
   SelectViewport,
   useForwardPropsEmits,
@@ -43,9 +43,11 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       "
     >
       <SelectScrollUpButton />
+
       <SelectViewport :class="cn('p-1', position === 'popper' && 'h-[var(--reka-select-trigger-height)] w-full min-w-[var(--reka-select-trigger-width)] scroll-my-1')">
         <slot />
       </SelectViewport>
+
       <SelectScrollDownButton />
     </SelectContent>
   </SelectPortal>

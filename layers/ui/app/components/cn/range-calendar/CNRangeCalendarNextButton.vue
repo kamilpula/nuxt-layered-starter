@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+import type { RangeCalendarNextProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
-import { RangeCalendarNext, type RangeCalendarNextProps, useForwardProps } from 'reka-ui'
+import { RangeCalendarNext, useForwardProps } from 'reka-ui'
 import { buttonVariants } from '#ui/app/components/cn/button'
 
 const props = defineProps<RangeCalendarNextProps & { class?: HTMLAttributes['class'] }>()
@@ -23,7 +24,10 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
   >
     <slot>
-      <Icon name="uil:angle-right" class="size-4" />
+      <Icon
+        name="uil:angle-right"
+        class="size-4"
+      />
     </slot>
   </RangeCalendarNext>
 </template>

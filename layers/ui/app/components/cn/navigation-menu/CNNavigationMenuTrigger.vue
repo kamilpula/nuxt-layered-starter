@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import type { NavigationMenuTriggerProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import {
   NavigationMenuTrigger,
-  type NavigationMenuTriggerProps,
+
   useForwardProps,
 } from 'reka-ui'
 
@@ -23,6 +24,11 @@ const forwardedProps = useForwardProps(delegatedProps)
     :class="cn(navigationMenuTriggerStyle(), 'group', props.class)"
   >
     <slot />
-    <Icon name="uil:angle-down" class="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180" aria-hidden="true" />
+
+    <Icon
+      name="uil:angle-down"
+      class="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
+      aria-hidden="true"
+    />
   </NavigationMenuTrigger>
 </template>

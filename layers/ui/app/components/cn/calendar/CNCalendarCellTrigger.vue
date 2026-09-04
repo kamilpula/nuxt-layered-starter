@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+import type { CalendarCellTriggerProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
-import { CalendarCellTrigger, type CalendarCellTriggerProps, useForwardProps } from 'reka-ui'
+import { CalendarCellTrigger, useForwardProps } from 'reka-ui'
 
 import { buttonVariants } from '#ui/app/components/cn/button'
 

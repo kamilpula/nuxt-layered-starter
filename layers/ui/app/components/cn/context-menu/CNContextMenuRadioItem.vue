@@ -1,14 +1,13 @@
 <script setup lang="ts">
+import type { ContextMenuRadioItemEmits, ContextMenuRadioItemProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import {
   ContextMenuItemIndicator,
   ContextMenuRadioItem,
-  type ContextMenuRadioItemEmits,
-  type ContextMenuRadioItemProps,
+
   useForwardPropsEmits,
 } from 'reka-ui'
-
 
 const props = defineProps<ContextMenuRadioItemProps & { class?: HTMLAttributes['class'] }>()
 const emits = defineEmits<ContextMenuRadioItemEmits>()
@@ -29,9 +28,13 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
   >
     <span class="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
       <ContextMenuItemIndicator>
-        <Icon name="uil:circle" class="size-2 fill-current" />
+        <Icon
+          name="uil:circle"
+          class="size-2 fill-current"
+        />
       </ContextMenuItemIndicator>
     </span>
+
     <slot />
   </ContextMenuRadioItem>
 </template>

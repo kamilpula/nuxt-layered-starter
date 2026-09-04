@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+import type { RangeCalendarPrevProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
-import { RangeCalendarPrev, type RangeCalendarPrevProps, useForwardProps } from 'reka-ui'
+import { RangeCalendarPrev, useForwardProps } from 'reka-ui'
 
 import { buttonVariants } from '#ui/app/components/cn/button'
 
@@ -24,7 +25,10 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
   >
     <slot>
-      <Icon name="uil:angle-left" class="size-4" />
+      <Icon
+        name="uil:angle-left"
+        class="size-4"
+      />
     </slot>
   </RangeCalendarPrev>
 </template>

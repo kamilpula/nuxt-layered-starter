@@ -1,14 +1,13 @@
 <script setup lang="ts">
+import type { DropdownMenuCheckboxItemEmits, DropdownMenuCheckboxItemProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import {
   DropdownMenuCheckboxItem,
-  type DropdownMenuCheckboxItemEmits,
-  type DropdownMenuCheckboxItemProps,
+
   DropdownMenuItemIndicator,
   useForwardPropsEmits,
 } from 'reka-ui'
-
 
 const props = defineProps<DropdownMenuCheckboxItemProps & { class?: HTMLAttributes['class'] }>()
 const emits = defineEmits<DropdownMenuCheckboxItemEmits>()
@@ -29,9 +28,13 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
   >
     <span class="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
       <DropdownMenuItemIndicator>
-        <Icon name="uil:check" class="size-4" />
+        <Icon
+          name="uil:check"
+          class="size-4"
+        />
       </DropdownMenuItemIndicator>
     </span>
+
     <slot />
   </DropdownMenuCheckboxItem>
 </template>

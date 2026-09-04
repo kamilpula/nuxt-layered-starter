@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { PaginationLastProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
+import type { ButtonVariants } from '#ui/app/components/cn/button'
 import { reactiveOmit } from '@vueuse/core'
-import { PaginationLast, useForwardProps } from 'reka-ui'
 
-import { buttonVariants, type ButtonVariants } from '#ui/app/components/cn/button'
+import { PaginationLast, useForwardProps } from 'reka-ui'
+import { buttonVariants } from '#ui/app/components/cn/button'
 
 const props = withDefaults(defineProps<PaginationLastProps & {
   size?: ButtonVariants['size']
@@ -25,6 +26,7 @@ const forwarded = useForwardProps(delegatedProps)
   >
     <slot>
       <span class="hidden sm:block">Last</span>
+
       <Icon name="uil:angle-right" />
     </slot>
   </PaginationLast>

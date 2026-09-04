@@ -1,4 +1,5 @@
-import { Comment, Text, type VNode } from 'vue'
+import type { VNode } from 'vue'
+import { Comment, Text } from 'vue'
 
 interface SlotContent {
   hasSlotContent: (slotKey: string, slotProps?: Record<string, unknown>) => boolean

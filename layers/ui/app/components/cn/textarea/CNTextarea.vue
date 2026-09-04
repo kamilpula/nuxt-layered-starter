@@ -2,7 +2,6 @@
 import type { HTMLAttributes } from 'vue'
 import { useVModel } from '@vueuse/core'
 
-
 const props = defineProps<{
   class?: HTMLAttributes['class']
   defaultValue?: string | number

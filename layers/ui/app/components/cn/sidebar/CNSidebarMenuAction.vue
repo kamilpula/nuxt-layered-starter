@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { PrimitiveProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
-import { Primitive, type PrimitiveProps } from 'reka-ui'
-
+import { Primitive } from 'reka-ui'
 
 const props = withDefaults(defineProps<PrimitiveProps & {
   showOnHover?: boolean
@@ -26,8 +26,8 @@ const props = withDefaults(defineProps<PrimitiveProps & {
         && 'peer-data-[active=true]/menu-button:text-sidebar-accent-foreground group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 md:opacity-0',
       props.class,
     )"
-    :as="as"
-    :as-child="asChild"
+    :as
+    :as-child
   >
     <slot />
   </Primitive>

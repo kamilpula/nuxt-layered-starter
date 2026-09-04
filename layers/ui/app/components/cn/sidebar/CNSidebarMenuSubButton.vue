@@ -3,7 +3,6 @@ import type { PrimitiveProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { Primitive } from 'reka-ui'
 
-
 const props = withDefaults(defineProps<PrimitiveProps & {
   size?: 'sm' | 'md'
   isActive?: boolean
@@ -18,8 +17,8 @@ const props = withDefaults(defineProps<PrimitiveProps & {
   <Primitive
     data-slot="sidebar-menu-sub-button"
     data-sidebar="menu-sub-button"
-    :as="as"
-    :as-child="asChild"
+    :as
+    :as-child
     :data-size="size"
     :data-active="isActive"
     :class="cn(
