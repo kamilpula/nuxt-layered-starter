@@ -80,9 +80,6 @@ importers:
       vue-sonner:
         specifier: 2.0.9
         version: 2.0.9(8080603d593f1f681abe8335a419ace1)
-      zod:
-        specifier: 4.5.4
-        version: 4.5.4
     devDependencies:
       '@antfu/eslint-config':
         specifier: 9.0.0
@@ -14202,6 +14199,7 @@ snapshots:
       compress-commons: 6.0.2
       readable-stream: 4.7.0
 
-  zod@4.5.4: {}
+  zod@4.5.4:
+    optional: true
 
   zwitch@2.0.4: {}

@@ -11,7 +11,7 @@ interface NavigateToOptions {
   open?: OpenOptions
 }
 
-export default function useLocaleNavigation() {
+export default function useNavigation() {
   const localePath = useLocalePath()
   const route = useRoute()
   const { t } = useI18n()

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PAGES } from '~~/constants/page/pages'
 
-const { getLocalePath } = useLocaleNavigation()
+const { getLocalePath } = useNavigation()
 </script>
 
 <template>
